@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+html{
+    font: 62.5%;
+    overflow: hidden;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+img{
+    max-width: 100%;
+}
+
+h1{
+    text-align: center;
+    color: #fff;
+    padding: 2rem 0rem;
+    font-size: calc(25px + (80 - 25)*
+    ((100vw - 300px)/(1600 - 300)));
+}
+
+.box-cintainer{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    gap: 2rem;
+
+
+}
+.box-cintainer .box{
+    flex: 1 1 25rem;
+    background: #111;
+    text-align: center;
+    padding: 2.5rem 2rem;
+    color: #fff;
+    border-radius: 2.5rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.box-cintainer .box img{
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #fff;
+    padding: 0.5rem;
+}
+
+.box-cintainer .box .h4{
+    font-size: calc(15px + (25 - 25) * ((100vw - 300px)/(1600 - 300)));
+
+}
+
+.box-cintainer .box .stars{
+    color: orange;
+    padding: 1rem 0rem;
+}
+
+.box-cintainer .box p{
+    text-align: justify;
+    font-size: calc(18px + (20 - 25) * ((100vw - 300px)/(1600 - 300)));
+
+}
+
+.box-cintainer .box::before{
+    content: '';
+    position: absolute;
+    background: linear-gradient(45deg, 
+    #00ffd5, #45ff00,#ff0 , #ff8800 , #002bff , #7a00ff , #00ffd5);
+    z-index: -1;
+    top: -0.4rem;
+    left: -0.4rem;
+    background-size: 400%;
+    width: calc(100% + 0.8rem);
+    height: calc(100% + 0.8rem);
+    border-radius: 2.5rem;
+    filter: blur(.3rem);
+    transition: opacity .3s ease;
+    opacity: 0;
+    animation: move 20s linear infinite;
+}
+
+.box-cintainer .box:hover::before{
+    opacity: 1;
+}
+
+@keyframes move{
+    0% {
+        background-position: 0 0 ;
+    }
+    50% {
+        background-position: 400% 0 ;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
